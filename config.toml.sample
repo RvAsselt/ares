@@ -53,6 +53,3 @@ level = "info"
 [[WebConfig]]
 Port = 3000
 Path = ""
-
-[[AgentConfig]]
-Port = 6887

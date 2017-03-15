@@ -19,8 +19,7 @@ type config struct {
 
 	Data string `toml:"data"`
 
-	Web   WebConfig   `toml:"web"`
-	Agent AgentConfig `toml:"agent"`
+	Web WebConfig `toml:"web"`
 
 	Logging []struct {
 		Output string `toml:"output"`
@@ -31,13 +30,6 @@ type config struct {
 type WebConfig struct {
 	Port string `toml:"port"`
 	Path string `toml:"path"`
-}
-
-type AgentConfig struct {
-	Port string `toml:"port"`
-	TLS  struct {
-		Enabled bool `toml:"enabled"`
-	} `toml:"tls"`
 }
 
 type Host struct {
