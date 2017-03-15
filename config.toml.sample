@@ -49,3 +49,10 @@ location = "/login.html"
 [[logging]]
 output = "stdout"
 level = "info"
+
+[[WebConfig]]
+Port = 3000
+Path = ""
+
+[[AgentConfig]]
+Port = 6887

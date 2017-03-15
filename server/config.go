@@ -1,10 +1,11 @@
 package server
 
 import (
-	"github.com/BurntSushi/toml"
-	"github.com/op/go-logging"
 	"io"
 	"os"
+
+	"github.com/BurntSushi/toml"
+	"github.com/op/go-logging"
 )
 
 type config struct {
@@ -18,10 +19,25 @@ type config struct {
 
 	Data string `toml:"data"`
 
+	Web   WebConfig   `toml:"web"`
+	Agent AgentConfig `toml:"agent"`
+
 	Logging []struct {
 		Output string `toml:"output"`
 		Level  string `toml:"level"`
 	} `toml:"logging"`
+}
+
+type WebConfig struct {
+	Port string `toml:"port"`
+	Path string `toml:"path"`
+}
+
+type AgentConfig struct {
+	Port string `toml:"port"`
+	TLS  struct {
+		Enabled bool `toml:"enabled"`
+	} `toml:"tls"`
 }
 
 type Host struct {
